@@ -324,23 +324,23 @@
                 <span class="section-label">Benchmarks</span>
                 <h2 class="section-title">Tested on Real-World LLM Frameworks</h2>
                 <p class="section-subtitle">
-                    Evaluated against 5 major LLM frameworks: LangChain, LlamaIndex, Haystack, LiteLLM, and DSPy.
+                    Evaluated against 10 major LLM frameworks including LangChain, LlamaIndex, vLLM, OpenAI Python, and more.
                 </p>
             </div>
 
             <!-- Key Stats -->
             <div class="benchmark-stats">
                 <div class="benchmark-stat">
-                    <div class="benchmark-number">55x</div>
-                    <div class="benchmark-label">More LLM-specific findings than traditional SAST</div>
+                    <div class="benchmark-number">57.8%</div>
+                    <div class="benchmark-label">Recall (ground truth testbed)</div>
                 </div>
                 <div class="benchmark-stat">
-                    <div class="benchmark-number">89.7%</div>
-                    <div class="benchmark-label">Security audit accuracy</div>
+                    <div class="benchmark-number">20.0%</div>
+                    <div class="benchmark-label">Precision</div>
                 </div>
                 <div class="benchmark-stat">
-                    <div class="benchmark-number">7,013</div>
-                    <div class="benchmark-label">Findings across 329K LOC</div>
+                    <div class="benchmark-number">29.7%</div>
+                    <div class="benchmark-label">F1 Score</div>
                 </div>
             </div>
 
@@ -369,62 +369,152 @@
 
             <!-- Results Table -->
             <div class="benchmark-table-container">
-                <h3 class="benchmark-table-title">Real-World Repository Analysis</h3>
+                <h3 class="benchmark-table-title">Real-World Repository Analysis (10 repos, 14,991 files)</h3>
                 <table class="benchmark-table">
                     <thead>
                         <tr>
                             <th>Repository</th>
-                            <th>AI-Sec Findings</th>
-                            <th>Bandit (H+M)</th>
-                            <th>Audit Score</th>
-                            <th>Maturity</th>
+                            <th>Files</th>
+                            <th>Findings</th>
+                            <th>Findings/File</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
                             <td><strong>LangChain</strong></td>
-                            <td>313</td>
-                            <td>6</td>
-                            <td>33.1%</td>
-                            <td><span class="maturity-badge developing">Developing</span></td>
+                            <td>2,501</td>
+                            <td>268</td>
+                            <td>0.11</td>
                         </tr>
                         <tr>
                             <td><strong>LlamaIndex</strong></td>
-                            <td>499</td>
-                            <td>6</td>
-                            <td>37.6%</td>
-                            <td><span class="maturity-badge developing">Developing</span></td>
+                            <td>4,088</td>
+                            <td>1,454</td>
+                            <td>0.36</td>
                         </tr>
                         <tr>
                             <td><strong>Haystack</strong></td>
-                            <td>322</td>
-                            <td>18</td>
-                            <td>18.8%</td>
-                            <td><span class="maturity-badge initial">Initial</span></td>
+                            <td>523</td>
+                            <td>47</td>
+                            <td>0.09</td>
                         </tr>
                         <tr>
                             <td><strong>LiteLLM</strong></td>
-                            <td>5,661</td>
-                            <td>73</td>
-                            <td>28.3%</td>
-                            <td><span class="maturity-badge developing">Developing</span></td>
+                            <td>2,792</td>
+                            <td>2,902</td>
+                            <td>1.04</td>
                         </tr>
                         <tr>
                             <td><strong>DSPy</strong></td>
-                            <td>218</td>
-                            <td>25</td>
-                            <td>19.6%</td>
-                            <td><span class="maturity-badge initial">Initial</span></td>
+                            <td>231</td>
+                            <td>122</td>
+                            <td>0.53</td>
+                        </tr>
+                        <tr>
+                            <td><strong>OpenAI Python</strong></td>
+                            <td>1,134</td>
+                            <td>60</td>
+                            <td>0.05</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Guidance</strong></td>
+                            <td>149</td>
+                            <td>38</td>
+                            <td>0.26</td>
+                        </tr>
+                        <tr>
+                            <td><strong>vLLM</strong></td>
+                            <td>2,239</td>
+                            <td>1,572</td>
+                            <td>0.70</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Semantic Kernel</strong></td>
+                            <td>1,241</td>
+                            <td>40</td>
+                            <td>0.03</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Text Gen WebUI</strong></td>
+                            <td>93</td>
+                            <td>165</td>
+                            <td>1.77</td>
                         </tr>
                     </tbody>
                     <tfoot>
                         <tr>
                             <td><strong>Total</strong></td>
-                            <td><strong>7,013</strong></td>
-                            <td><strong>128</strong></td>
-                            <td colspan="2"></td>
+                            <td><strong>14,991</strong></td>
+                            <td><strong>6,668</strong></td>
+                            <td><strong>0.44</strong></td>
                         </tr>
                     </tfoot>
+                </table>
+            </div>
+
+            <!-- Per-Category Detection Rates -->
+            <div class="benchmark-table-container" style="margin-top: 2rem;">
+                <h3 class="benchmark-table-title">Detection Rate by OWASP LLM Category</h3>
+                <table class="benchmark-table">
+                    <thead>
+                        <tr>
+                            <th>Category</th>
+                            <th>Recall</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>LLM01: Prompt Injection</td>
+                            <td>100%</td>
+                            <td><span class="maturity-badge developing" style="background: #22c55e;">Excellent</span></td>
+                        </tr>
+                        <tr>
+                            <td>LLM04: Model DoS</td>
+                            <td>100%</td>
+                            <td><span class="maturity-badge developing" style="background: #22c55e;">Excellent</span></td>
+                        </tr>
+                        <tr>
+                            <td>LLM08: Excessive Agency</td>
+                            <td>100%</td>
+                            <td><span class="maturity-badge developing" style="background: #22c55e;">Excellent</span></td>
+                        </tr>
+                        <tr>
+                            <td>LLM09: Overreliance</td>
+                            <td>100%</td>
+                            <td><span class="maturity-badge developing" style="background: #22c55e;">Excellent</span></td>
+                        </tr>
+                        <tr>
+                            <td>LLM10: Model Theft</td>
+                            <td>86%</td>
+                            <td><span class="maturity-badge developing" style="background: #22c55e;">Good</span></td>
+                        </tr>
+                        <tr>
+                            <td>LLM06: Sensitive Info</td>
+                            <td>71%</td>
+                            <td><span class="maturity-badge developing">Moderate</span></td>
+                        </tr>
+                        <tr>
+                            <td>LLM05: Supply Chain</td>
+                            <td>14%</td>
+                            <td><span class="maturity-badge initial">Improving</span></td>
+                        </tr>
+                        <tr>
+                            <td>LLM07: Insecure Plugin</td>
+                            <td>14%</td>
+                            <td><span class="maturity-badge initial">Improving</span></td>
+                        </tr>
+                        <tr>
+                            <td>LLM02: Insecure Output</td>
+                            <td>0%</td>
+                            <td><span class="maturity-badge initial">In Development</span></td>
+                        </tr>
+                        <tr>
+                            <td>LLM03: Training Poisoning</td>
+                            <td>0%</td>
+                            <td><span class="maturity-badge initial">In Development</span></td>
+                        </tr>
+                    </tbody>
                 </table>
             </div>
 
@@ -432,9 +522,9 @@
             <div class="benchmark-note">
                 <span class="note-icon">📊</span>
                 <div class="note-content">
-                    <strong>Transparency:</strong> We optimize for <em>recall</em> (finding issues) over precision.
-                    Current precision is 17% — we're actively working on reducing false positives.
-                    Use alongside existing SAST tools for comprehensive coverage.
+                    <strong>Transparency:</strong> Current metrics: <strong>20% precision</strong>, <strong>57.8% recall</strong>, <strong>29.7% F1</strong>.
+                    Best at detecting Prompt Injection, DoS, Excessive Agency, and Overreliance (100% recall).
+                    Actively improving Supply Chain and Insecure Output detection.
                 </div>
             </div>
         </div>
