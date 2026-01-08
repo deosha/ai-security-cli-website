@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Security CLI - Unified AI/LLM Security Scanner</title>
+    <meta name="description" content="Static code analysis + live model testing for OWASP LLM Top 10 vulnerabilities. One CLI tool, complete security coverage.">
+    <meta name="keywords" content="AI security, LLM security, OWASP LLM Top 10, prompt injection, security scanner, CLI tool">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="AI Security CLI - Unified AI/LLM Security Scanner">
+    <meta property="og:description" content="Static code analysis + live model testing for OWASP LLM Top 10 vulnerabilities.">
+    <meta property="og:type" content="website">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="container">
+            <a href="/" class="nav-logo">
+                <div class="nav-logo-icon">🛡️</div>
+                <span>AI Security CLI</span>
+            </a>
+
+            <ul class="nav-links">
+                <li><a href="#problem" class="nav-link">Problem</a></li>
+                <li><a href="#solution" class="nav-link">Solution</a></li>
+                <li><a href="#quickstart" class="nav-link">Quick Start</a></li>
+                <li><a href="docs.html" class="nav-link">Docs</a></li>
+            </ul>
+
+            <div class="nav-cta">
+                <a href="https://github.com/deosha/ai-security-cli" class="btn btn-ghost" target="_blank">GitHub</a>
+                <a href="https://pypi.org/project/ai-security-cli/" class="btn btn-primary" target="_blank">PyPI</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-badge">
+                <span>🚀</span>
+                <span><strong>v1.0.0-beta</strong> now available</span>
+            </div>
+
+            <h1 class="hero-title">Unified AI/LLM Security Scanner</h1>
+            <p class="hero-subtitle">
+                Static code analysis + live model testing for OWASP LLM Top 10 vulnerabilities.
+                One CLI tool, complete security coverage.
+            </p>
+
+            <div class="install-box">
+                <code class="install-command">
+                    <span class="prompt">$</span> pip install ai-security-cli
+                </code>
+                <button class="copy-btn" onclick="copyInstall()">Copy</button>
+            </div>
+
+            <div class="hero-links">
+                <a href="https://github.com/deosha/ai-security-cli" class="hero-link" target="_blank">
+                    ⭐ Star on GitHub
+                </a>
+                <a href="docs.html" class="hero-link">
+                    📖 Read the Docs
+                </a>
+                <a href="https://pypi.org/project/ai-security-cli/" class="hero-link" target="_blank">
+                    📦 View on PyPI
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Problem Section -->
+    <section id="problem" class="section section-dark">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">The Problem</span>
+                <h2 class="section-title">The AI Security Gap</h2>
+                <p class="section-subtitle">
+                    LLMs are being deployed to production faster than ever, but security is an afterthought.
+                </p>
+            </div>
+
+            <div class="problem-grid">
+                <div class="problem-card">
+                    <div class="problem-icon">⚠️</div>
+                    <h3>LLMs Deployed Without Testing</h3>
+                    <p>
+                        Teams rush AI features to production without security testing.
+                        No one checks if the model can be jailbroken, tricked into leaking data,
+                        or manipulated via prompt injection.
+                    </p>
+                </div>
+
+                <div class="problem-card">
+                    <div class="problem-icon">🎯</div>
+                    <h3>OWASP LLM Top 10 is Real</h3>
+                    <p>
+                        Prompt injection, insecure output handling, model theft — these aren't theoretical.
+                        They're actively exploited. Yet most teams don't know they exist, let alone how to detect them.
+                    </p>
+                </div>
+
+                <div class="problem-card">
+                    <div class="problem-icon">🧩</div>
+                    <h3>Fragmented Tooling</h3>
+                    <p>
+                        Existing tools either do static analysis OR live testing, never both.
+                        You need multiple tools, different configurations, separate reports.
+                        Integration into CI/CD becomes a nightmare.
+                    </p>
+                </div>
+
+                <div class="problem-card">
+                    <div class="problem-icon">🔒</div>
+                    <h3>No Unified Standard</h3>
+                    <p>
+                        Security teams lack a single CLI tool that covers the full OWASP LLM Top 10.
+                        No standardized output format. No way to track vulnerabilities across code and runtime.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Solution Section -->
+    <section id="solution" class="section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">The Solution</span>
+                <h2 class="section-title">One Tool. Complete Coverage.</h2>
+                <p class="section-subtitle">
+                    AI Security CLI combines static code analysis and live model testing in a single, unified tool.
+                </p>
+            </div>
+
+            <div class="architecture-container">
+                <!-- SVG Architecture Diagram - Light Theme -->
+                <svg viewBox="0 0 900 620" xmlns="http://www.w3.org/2000/svg" style="width: 100%; max-width: 900px; margin: 0 auto; display: block;">
+                    <defs>
+                        <!-- Gradients - Orange & White Theme -->
+                        <linearGradient id="orangeMainGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:#f97316"/>
+                            <stop offset="100%" style="stop-color:#ea580c"/>
+                        </linearGradient>
+                        <linearGradient id="orangeLightGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:#fb923c"/>
+                            <stop offset="100%" style="stop-color:#f97316"/>
+                        </linearGradient>
+                        <linearGradient id="orangeDarkGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:#ea580c"/>
+                            <stop offset="100%" style="stop-color:#c2410c"/>
+                        </linearGradient>
+                        <!-- Shadow filter -->
+                        <filter id="shadow" x="-10%" y="-10%" width="120%" height="130%">
+                            <feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="#f97316" flood-opacity="0.2"/>
+                        </filter>
+                        <filter id="cardShadow" x="-5%" y="-5%" width="110%" height="115%">
+                            <feDropShadow dx="0" dy="2" stdDeviation="4" flood-color="#000" flood-opacity="0.08"/>
+                        </filter>
+                        <!-- Arrow markers -->
+                        <marker id="arrowOrange" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+                            <polygon points="0 0, 10 3.5, 0 7" fill="#f97316"/>
+                        </marker>
+                    </defs>
+
+                    <!-- Background glow -->
+                    <ellipse cx="450" cy="50" rx="200" ry="80" fill="#f97316" opacity="0.05"/>
+
+                    <!-- Main CLI Box -->
+                    <rect x="300" y="20" width="300" height="50" rx="10" fill="url(#orangeMainGradient)" filter="url(#shadow)"/>
+                    <text x="450" y="52" text-anchor="middle" fill="white" font-family="Inter, sans-serif" font-weight="700" font-size="16">ai-security-cli</text>
+
+                    <!-- Connector line from main to split -->
+                    <line x1="450" y1="70" x2="450" y2="100" stroke="#f97316" stroke-width="2"/>
+
+                    <!-- Split lines -->
+                    <path d="M 450 100 L 450 110 L 225 110 L 225 130" stroke="#f97316" stroke-width="2" fill="none" marker-end="url(#arrowOrange)"/>
+                    <path d="M 450 100 L 450 110 L 675 110 L 675 130" stroke="#f97316" stroke-width="2" fill="none" marker-end="url(#arrowOrange)"/>
+
+                    <!-- SCAN Command Box -->
+                    <rect x="100" y="140" width="250" height="60" rx="10" fill="white" stroke="#f97316" stroke-width="2" filter="url(#cardShadow)"/>
+                    <text x="225" y="165" text-anchor="middle" fill="#ea580c" font-family="JetBrains Mono, monospace" font-weight="600" font-size="14">ai-security-cli scan</text>
+                    <text x="225" y="185" text-anchor="middle" fill="#6b7280" font-family="Inter, sans-serif" font-size="12">Static Analysis</text>
+
+                    <!-- TEST Command Box -->
+                    <rect x="550" y="140" width="250" height="60" rx="10" fill="white" stroke="#fb923c" stroke-width="2" filter="url(#cardShadow)"/>
+                    <text x="675" y="165" text-anchor="middle" fill="#ea580c" font-family="JetBrains Mono, monospace" font-weight="600" font-size="14">ai-security-cli test</text>
+                    <text x="675" y="185" text-anchor="middle" fill="#6b7280" font-family="Inter, sans-serif" font-size="12">Live Testing</text>
+
+                    <!-- Arrows to detector boxes -->
+                    <line x1="225" y1="200" x2="225" y2="230" stroke="#f97316" stroke-width="2" marker-end="url(#arrowOrange)"/>
+                    <line x1="675" y1="200" x2="675" y2="230" stroke="#fb923c" stroke-width="2" marker-end="url(#arrowOrange)"/>
+
+                    <!-- 10 OWASP Detectors Box -->
+                    <rect x="50" y="240" width="350" height="200" rx="12" fill="white" stroke="#e5e7eb" stroke-width="1" filter="url(#cardShadow)"/>
+                    <rect x="50" y="240" width="350" height="36" rx="12" fill="url(#orangeMainGradient)"/>
+                    <text x="225" y="264" text-anchor="middle" fill="white" font-family="Inter, sans-serif" font-weight="600" font-size="14">10 OWASP Detectors</text>
+
+                    <!-- Detector list - left column -->
+                    <text x="80" y="300" fill="#4b5563" font-family="Inter, sans-serif" font-size="12">• Prompt Injection</text>
+                    <text x="80" y="322" fill="#4b5563" font-family="Inter, sans-serif" font-size="12">• Insecure Output</text>
+                    <text x="80" y="344" fill="#4b5563" font-family="Inter, sans-serif" font-size="12">• Training Poisoning</text>
+                    <text x="80" y="366" fill="#4b5563" font-family="Inter, sans-serif" font-size="12">• Model DoS</text>
+                    <text x="80" y="388" fill="#4b5563" font-family="Inter, sans-serif" font-size="12">• Supply Chain</text>
+
+                    <!-- Detector list - right column -->
+                    <text x="240" y="300" fill="#4b5563" font-family="Inter, sans-serif" font-size="12">• Secrets Exposure</text>
+                    <text x="240" y="322" fill="#4b5563" font-family="Inter, sans-serif" font-size="12">• Insecure Plugins</text>
+                    <text x="240" y="344" fill="#4b5563" font-family="Inter, sans-serif" font-size="12">• Excessive Agency</text>
+                    <text x="240" y="366" fill="#4b5563" font-family="Inter, sans-serif" font-size="12">• Overreliance</text>
+                    <text x="240" y="388" fill="#4b5563" font-family="Inter, sans-serif" font-size="12">• Model Theft</text>
+
+                    <!-- 11 Attack Vectors Box -->
+                    <rect x="500" y="240" width="350" height="200" rx="12" fill="white" stroke="#e5e7eb" stroke-width="1" filter="url(#cardShadow)"/>
+                    <rect x="500" y="240" width="350" height="36" rx="12" fill="url(#orangeLightGradient)"/>
+                    <text x="675" y="264" text-anchor="middle" fill="white" font-family="Inter, sans-serif" font-weight="600" font-size="14">11 Attack Vectors</text>
+
+                    <!-- Attack list - left column -->
+                    <text x="530" y="300" fill="#4b5563" font-family="Inter, sans-serif" font-size="12">• Prompt Injection</text>
+                    <text x="530" y="322" fill="#4b5563" font-family="Inter, sans-serif" font-size="12">• Jailbreak</text>
+                    <text x="530" y="344" fill="#4b5563" font-family="Inter, sans-serif" font-size="12">• Data Leakage</text>
+                    <text x="530" y="366" fill="#4b5563" font-family="Inter, sans-serif" font-size="12">• Hallucination</text>
+                    <text x="530" y="388" fill="#4b5563" font-family="Inter, sans-serif" font-size="12">• Model Extraction</text>
+                    <text x="530" y="410" fill="#4b5563" font-family="Inter, sans-serif" font-size="12">• Bias Detection</text>
+
+                    <!-- Attack list - right column -->
+                    <text x="690" y="300" fill="#4b5563" font-family="Inter, sans-serif" font-size="12">• DoS</text>
+                    <text x="690" y="322" fill="#4b5563" font-family="Inter, sans-serif" font-size="12">• Supply Chain</text>
+                    <text x="690" y="344" fill="#4b5563" font-family="Inter, sans-serif" font-size="12">• Adversarial Inputs</text>
+                    <text x="690" y="366" fill="#4b5563" font-family="Inter, sans-serif" font-size="12">• Output Manipulation</text>
+                    <text x="690" y="388" fill="#4b5563" font-family="Inter, sans-serif" font-size="12">• Behavioral Anomaly</text>
+
+                    <!-- Arrows to result boxes -->
+                    <line x1="225" y1="440" x2="225" y2="470" stroke="#f97316" stroke-width="2" marker-end="url(#arrowOrange)"/>
+                    <line x1="675" y1="440" x2="675" y2="470" stroke="#fb923c" stroke-width="2" marker-end="url(#arrowOrange)"/>
+
+                    <!-- Code Vulnerabilities Box -->
+                    <rect x="75" y="480" width="300" height="50" rx="8" fill="white" stroke="#f97316" stroke-width="1" filter="url(#cardShadow)"/>
+                    <text x="225" y="500" text-anchor="middle" fill="#ea580c" font-family="Inter, sans-serif" font-weight="600" font-size="13">Code Vulnerabilities</text>
+                    <text x="225" y="518" text-anchor="middle" fill="#9ca3af" font-family="Inter, sans-serif" font-size="11">Found in your codebase</text>
+
+                    <!-- Model Vulnerabilities Box -->
+                    <rect x="525" y="480" width="300" height="50" rx="8" fill="white" stroke="#fb923c" stroke-width="1" filter="url(#cardShadow)"/>
+                    <text x="675" y="500" text-anchor="middle" fill="#ea580c" font-family="Inter, sans-serif" font-weight="600" font-size="13">Model Vulnerabilities</text>
+                    <text x="675" y="518" text-anchor="middle" fill="#9ca3af" font-family="Inter, sans-serif" font-size="11">Found via live probes</text>
+
+                    <!-- Merge lines to unified report -->
+                    <path d="M 225 530 L 225 550 L 450 550 L 450 565" stroke="#f97316" stroke-width="2" fill="none"/>
+                    <path d="M 675 530 L 675 550 L 450 550" stroke="#f97316" stroke-width="2" fill="none"/>
+                    <line x1="450" y1="550" x2="450" y2="565" stroke="#f97316" stroke-width="2" marker-end="url(#arrowOrange)"/>
+
+                    <!-- Unified Report Box -->
+                    <rect x="275" y="575" width="350" height="45" rx="10" fill="url(#orangeDarkGradient)" filter="url(#shadow)"/>
+                    <text x="450" y="595" text-anchor="middle" fill="white" font-family="Inter, sans-serif" font-weight="600" font-size="14">Unified Report</text>
+                    <text x="450" y="612" text-anchor="middle" fill="rgba(255,255,255,0.9)" font-family="JetBrains Mono, monospace" font-size="11">JSON  |  HTML  |  SARIF</text>
+                </svg>
+            </div>
+
+            <!-- Stats -->
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-number">10</div>
+                    <div class="stat-label">Static Detectors</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">11</div>
+                    <div class="stat-label">Live Attack Vectors</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">7</div>
+                    <div class="stat-label">LLM Providers</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">100%</div>
+                    <div class="stat-label">OWASP LLM Coverage</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Value Proposition -->
+    <section class="section section-dark">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Value Proposition</span>
+                <h2 class="section-title">Built for Your Workflow</h2>
+                <p class="section-subtitle">
+                    Whether you're a security engineer, developer, or platform team — we've got you covered.
+                </p>
+            </div>
+
+            <div class="value-grid">
+                <div class="value-card">
+                    <div class="value-icon">🔐</div>
+                    <h3>For Security Engineers</h3>
+                    <ul class="value-list">
+                        <li>Complete OWASP LLM Top 10 coverage</li>
+                        <li>Evidence-based confidence scoring</li>
+                        <li>Actionable remediation guidance</li>
+                        <li>SARIF output for GitHub Security</li>
+                    </ul>
+                </div>
+
+                <div class="value-card">
+                    <div class="value-icon">💻</div>
+                    <h3>For Developers</h3>
+                    <ul class="value-list">
+                        <li>Simple pip install, intuitive CLI</li>
+                        <li>Works with your existing codebase</li>
+                        <li>No config files needed</li>
+                        <li>Clear, actionable output</li>
+                    </ul>
+                </div>
+
+                <div class="value-card">
+                    <div class="value-icon">⚙️</div>
+                    <h3>For DevOps / Platform</h3>
+                    <ul class="value-list">
+                        <li>CI/CD ready out of the box</li>
+                        <li>Multi-provider: cloud + local (Ollama)</li>
+                        <li>JSON/SARIF for automation</li>
+                        <li>Enterprise-ready, MIT licensed</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quick Start -->
+    <section id="quickstart" class="section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Quick Start</span>
+                <h2 class="section-title">Up and Running in Minutes</h2>
+                <p class="section-subtitle">
+                    Install, scan, test. It's that simple.
+                </p>
+            </div>
+
+            <div class="quickstart-container">
+                <div class="quickstart-steps">
+                    <div class="quickstart-step">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <h4>Install</h4>
+                            <p>Install from PyPI with pip</p>
+                            <div class="code-block">
+                                <span class="command">pip install</span> ai-security-cli
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="quickstart-step">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <h4>Scan Your Code</h4>
+                            <p>Static analysis for code vulnerabilities</p>
+                            <div class="code-block">
+                                <span class="comment"># Scan a directory</span><br>
+                                <span class="command">ai-security-cli scan</span> ./my-project <span class="flag">-o html</span><br><br>
+                                <span class="comment"># Filter by severity</span><br>
+                                <span class="command">ai-security-cli scan</span> ./src <span class="flag">--severity high</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="quickstart-step">
+                        <div class="step-number">3</div>
+                        <div class="step-content">
+                            <h4>Test Live Models</h4>
+                            <p>Runtime testing against actual LLMs</p>
+                            <div class="code-block">
+                                <span class="comment"># Test OpenAI model</span><br>
+                                <span class="command">ai-security-cli test</span> <span class="flag">-p openai -m gpt-4</span><br><br>
+                                <span class="comment"># Test local Ollama model</span><br>
+                                <span class="command">ai-security-cli test</span> <span class="flag">-p ollama -m llama2</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="output-preview">
+                    <div class="output-header">
+                        <span class="output-dot red"></span>
+                        <span class="output-dot yellow"></span>
+                        <span class="output-dot green"></span>
+                    </div>
+                    <div class="output-body">
+<pre style="margin: 0; color: var(--text-secondary);">
+<span style="color: var(--accent-primary);">AI Security CLI</span> v1.0.0
+
+<span style="color: var(--text-muted);">Scanning ./my-project...</span>
+
+<span style="color: var(--success);">✓</span> Analyzed 47 files
+<span style="color: var(--success);">✓</span> Ran 10 OWASP detectors
+
+<span style="color: var(--warning);">━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span>
+<span style="color: var(--text-primary);">FINDINGS SUMMARY</span>
+<span style="color: var(--warning);">━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span>
+
+<span style="color: var(--error);">■ CRITICAL</span>  1   Prompt Injection (LLM01)
+<span style="color: #f97316;">■ HIGH</span>      2   Insecure Output (LLM02)
+<span style="color: var(--warning);">■ MEDIUM</span>    3   Secrets Exposure (LLM06)
+<span style="color: var(--info);">■ LOW</span>       1   Overreliance (LLM09)
+
+<span style="color: var(--text-muted);">─────────────────────────────────────</span>
+<span style="color: var(--text-primary);">Overall Score:</span> <span style="color: var(--warning);">67/100</span>
+<span style="color: var(--text-primary);">Confidence:</span>    <span style="color: var(--success);">0.85</span>
+
+<span style="color: var(--success);">✓</span> Report saved to <span style="color: var(--accent-primary);">report.html</span>
+</pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Providers -->
+    <section class="section section-dark">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Supported Providers</span>
+                <h2 class="section-title">Test Any LLM Provider</h2>
+                <p class="section-subtitle">
+                    Cloud providers, local models, or custom endpoints — we support them all.
+                </p>
+            </div>
+
+            <div class="providers-grid">
+                <div class="provider-card">
+                    <span class="provider-icon">🟢</span>
+                    <span class="provider-name">OpenAI</span>
+                </div>
+                <div class="provider-card">
+                    <span class="provider-icon">🟠</span>
+                    <span class="provider-name">Anthropic</span>
+                </div>
+                <div class="provider-card">
+                    <span class="provider-icon">🔶</span>
+                    <span class="provider-name">AWS Bedrock</span>
+                </div>
+                <div class="provider-card">
+                    <span class="provider-icon">🔵</span>
+                    <span class="provider-name">Google Vertex</span>
+                </div>
+                <div class="provider-card">
+                    <span class="provider-icon">🔷</span>
+                    <span class="provider-name">Azure OpenAI</span>
+                </div>
+                <div class="provider-card">
+                    <span class="provider-icon">🦙</span>
+                    <span class="provider-name">Ollama</span>
+                </div>
+                <div class="provider-card">
+                    <span class="provider-icon">⚡</span>
+                    <span class="provider-name">Custom API</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <a href="/" class="nav-logo">
+                        <div class="nav-logo-icon">🛡️</div>
+                        <span>AI Security CLI</span>
+                    </a>
+                    <p>Unified AI/LLM Security Scanner</p>
+                </div>
+
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4>Resources</h4>
+                        <ul>
+                            <li><a href="docs.html">Documentation</a></li>
+                            <li><a href="docs.html#owasp">OWASP LLM Top 10</a></li>
+                            <li><a href="docs.html#cli-reference">CLI Reference</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-column">
+                        <h4>Project</h4>
+                        <ul>
+                            <li><a href="https://github.com/deosha/ai-security-cli" target="_blank">GitHub</a></li>
+                            <li><a href="https://pypi.org/project/ai-security-cli/" target="_blank">PyPI</a></li>
+                            <li><a href="https://github.com/deosha/ai-security-cli/issues" target="_blank">Issues</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-column">
+                        <h4>Legal</h4>
+                        <ul>
+                            <li><a href="https://github.com/deosha/ai-security-cli/blob/main/LICENSE" target="_blank">MIT License</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>Built with <span class="footer-heart">❤️</span> for the AI Security Community</p>
+                <p>© 2026 AI Security CLI. MIT License.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function copyInstall() {
+            const command = 'pip install ai-security-cli';
+            navigator.clipboard.writeText(command).then(() => {
+                const btn = document.querySelector('.copy-btn');
+                btn.textContent = 'Copied!';
+                btn.classList.add('copied');
+                setTimeout(() => {
+                    btn.textContent = 'Copy';
+                    btn.classList.remove('copied');
+                }, 2000);
+            });
+        }
+    </script>
+</body>
+</html>
