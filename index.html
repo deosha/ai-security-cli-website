@@ -32,6 +32,7 @@
             <ul class="nav-links">
                 <li><a href="#problem" class="nav-link">Problem</a></li>
                 <li><a href="#solution" class="nav-link">Solution</a></li>
+                <li><a href="#benchmarks" class="nav-link">Benchmarks</a></li>
                 <li><a href="#quickstart" class="nav-link">Quick Start</a></li>
                 <li><a href="docs.html" class="nav-link">Docs</a></li>
             </ul>
@@ -316,8 +317,131 @@
         </div>
     </section>
 
+    <!-- Benchmarks Section -->
+    <section id="benchmarks" class="section section-dark">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Benchmarks</span>
+                <h2 class="section-title">Tested on Real-World LLM Frameworks</h2>
+                <p class="section-subtitle">
+                    Evaluated against 5 major LLM frameworks: LangChain, LlamaIndex, Haystack, LiteLLM, and DSPy.
+                </p>
+            </div>
+
+            <!-- Key Stats -->
+            <div class="benchmark-stats">
+                <div class="benchmark-stat">
+                    <div class="benchmark-number">55x</div>
+                    <div class="benchmark-label">More LLM-specific findings than traditional SAST</div>
+                </div>
+                <div class="benchmark-stat">
+                    <div class="benchmark-number">89.7%</div>
+                    <div class="benchmark-label">Security audit accuracy</div>
+                </div>
+                <div class="benchmark-stat">
+                    <div class="benchmark-number">7,013</div>
+                    <div class="benchmark-label">Findings across 329K LOC</div>
+                </div>
+            </div>
+
+            <!-- Unique Coverage Callout -->
+            <div class="unique-coverage">
+                <div class="unique-coverage-header">
+                    <span class="unique-icon">🎯</span>
+                    <h3>Unique Detection Coverage</h3>
+                </div>
+                <p>Traditional SAST tools (Semgrep, Bandit) have <strong>0% coverage</strong> for these OWASP LLM categories:</p>
+                <div class="unique-categories">
+                    <div class="unique-category">
+                        <span class="category-id">LLM04</span>
+                        <span class="category-name">Model Denial of Service</span>
+                    </div>
+                    <div class="unique-category">
+                        <span class="category-id">LLM09</span>
+                        <span class="category-name">Overreliance</span>
+                    </div>
+                    <div class="unique-category">
+                        <span class="category-id">LLM10</span>
+                        <span class="category-name">Model Theft</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Results Table -->
+            <div class="benchmark-table-container">
+                <h3 class="benchmark-table-title">Real-World Repository Analysis</h3>
+                <table class="benchmark-table">
+                    <thead>
+                        <tr>
+                            <th>Repository</th>
+                            <th>AI-Sec Findings</th>
+                            <th>Bandit (H+M)</th>
+                            <th>Audit Score</th>
+                            <th>Maturity</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>LangChain</strong></td>
+                            <td>313</td>
+                            <td>6</td>
+                            <td>33.1%</td>
+                            <td><span class="maturity-badge developing">Developing</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>LlamaIndex</strong></td>
+                            <td>499</td>
+                            <td>6</td>
+                            <td>37.6%</td>
+                            <td><span class="maturity-badge developing">Developing</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Haystack</strong></td>
+                            <td>322</td>
+                            <td>18</td>
+                            <td>18.8%</td>
+                            <td><span class="maturity-badge initial">Initial</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>LiteLLM</strong></td>
+                            <td>5,661</td>
+                            <td>73</td>
+                            <td>28.3%</td>
+                            <td><span class="maturity-badge developing">Developing</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>DSPy</strong></td>
+                            <td>218</td>
+                            <td>25</td>
+                            <td>19.6%</td>
+                            <td><span class="maturity-badge initial">Initial</span></td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td><strong>Total</strong></td>
+                            <td><strong>7,013</strong></td>
+                            <td><strong>128</strong></td>
+                            <td colspan="2"></td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+
+            <!-- Transparency Note -->
+            <div class="benchmark-note">
+                <span class="note-icon">📊</span>
+                <div class="note-content">
+                    <strong>Transparency:</strong> We optimize for <em>recall</em> (finding issues) over precision.
+                    Current precision is 17% — we're actively working on reducing false positives.
+                    Use alongside existing SAST tools for comprehensive coverage.
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Value Proposition -->
-    <section class="section section-dark">
+    <section class="section">
         <div class="container">
             <div class="section-header">
                 <span class="section-label">Value Proposition</span>
