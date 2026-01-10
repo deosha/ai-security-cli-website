@@ -351,15 +351,15 @@
             <!-- Key Stats -->
             <div class="benchmark-stats">
                 <div class="benchmark-stat">
-                    <div class="benchmark-number">57.8%</div>
-                    <div class="benchmark-label">Recall (ground truth testbed)</div>
-                </div>
-                <div class="benchmark-stat">
-                    <div class="benchmark-number">20.0%</div>
+                    <div class="benchmark-number">69.6%</div>
                     <div class="benchmark-label">Precision</div>
                 </div>
                 <div class="benchmark-stat">
-                    <div class="benchmark-number">29.7%</div>
+                    <div class="benchmark-number">53.4%</div>
+                    <div class="benchmark-label">Recall</div>
+                </div>
+                <div class="benchmark-stat">
+                    <div class="benchmark-number">60.5%</div>
                     <div class="benchmark-label">F1 Score</div>
                 </div>
             </div>
@@ -480,59 +480,70 @@
                         <tr>
                             <th>Category</th>
                             <th>Recall</th>
-                            <th>Status</th>
+                            <th>Precision</th>
+                            <th>F1</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <td>LLM01: Prompt Injection</td>
-                            <td>100%</td>
-                            <td><span class="maturity-badge" style="background: #22c55e; color: white;">Excellent</span></td>
-                        </tr>
-                        <tr>
-                            <td>LLM04: Model DoS</td>
-                            <td>100%</td>
-                            <td><span class="maturity-badge" style="background: #22c55e; color: white;">Excellent</span></td>
-                        </tr>
-                        <tr>
-                            <td>LLM08: Excessive Agency</td>
-                            <td>100%</td>
-                            <td><span class="maturity-badge" style="background: #22c55e; color: white;">Excellent</span></td>
-                        </tr>
-                        <tr>
-                            <td>LLM09: Overreliance</td>
-                            <td>100%</td>
-                            <td><span class="maturity-badge" style="background: #22c55e; color: white;">Excellent</span></td>
-                        </tr>
-                        <tr>
-                            <td>LLM10: Model Theft</td>
-                            <td>86%</td>
-                            <td><span class="maturity-badge" style="background: #22c55e; color: white;">Good</span></td>
+                            <td>LLM07: Insecure Plugin</td>
+                            <td>85.7%</td>
+                            <td>85.7%</td>
+                            <td><span class="maturity-badge" style="background: #22c55e; color: white;">85.7%</span></td>
                         </tr>
                         <tr>
                             <td>LLM06: Sensitive Info</td>
-                            <td>71%</td>
-                            <td><span class="maturity-badge developing">Moderate</span></td>
+                            <td>71.4%</td>
+                            <td>55.6%</td>
+                            <td><span class="maturity-badge" style="background: #22c55e; color: white;">62.5%</span></td>
+                        </tr>
+                        <tr>
+                            <td>LLM04: Model DoS</td>
+                            <td>66.7%</td>
+                            <td>100%</td>
+                            <td><span class="maturity-badge" style="background: #22c55e; color: white;">80.0%</span></td>
+                        </tr>
+                        <tr>
+                            <td>LLM09: Overreliance</td>
+                            <td>66.7%</td>
+                            <td>100%</td>
+                            <td><span class="maturity-badge" style="background: #22c55e; color: white;">80.0%</span></td>
                         </tr>
                         <tr>
                             <td>LLM05: Supply Chain</td>
-                            <td>14%</td>
-                            <td><span class="maturity-badge initial">Improving</span></td>
+                            <td>60.0%</td>
+                            <td>54.5%</td>
+                            <td><span class="maturity-badge developing">57.1%</span></td>
                         </tr>
                         <tr>
-                            <td>LLM07: Insecure Plugin</td>
-                            <td>14%</td>
-                            <td><span class="maturity-badge initial">Improving</span></td>
+                            <td>LLM01: Prompt Injection</td>
+                            <td>50.0%</td>
+                            <td>75.0%</td>
+                            <td><span class="maturity-badge developing">60.0%</span></td>
                         </tr>
                         <tr>
-                            <td>LLM02: Insecure Output</td>
-                            <td>0%</td>
-                            <td><span class="maturity-badge initial">In Development</span></td>
+                            <td>LLM10: Model Theft</td>
+                            <td>42.9%</td>
+                            <td>75.0%</td>
+                            <td><span class="maturity-badge developing">54.5%</span></td>
                         </tr>
                         <tr>
                             <td>LLM03: Training Poisoning</td>
-                            <td>0%</td>
-                            <td><span class="maturity-badge initial">In Development</span></td>
+                            <td>40.0%</td>
+                            <td>100%</td>
+                            <td><span class="maturity-badge developing">57.1%</span></td>
+                        </tr>
+                        <tr>
+                            <td>LLM08: Excessive Agency</td>
+                            <td>33.3%</td>
+                            <td>100%</td>
+                            <td><span class="maturity-badge developing">50.0%</span></td>
+                        </tr>
+                        <tr>
+                            <td>LLM02: Insecure Output</td>
+                            <td>30.0%</td>
+                            <td>42.9%</td>
+                            <td><span class="maturity-badge initial">35.3%</span></td>
                         </tr>
                     </tbody>
                 </table>
@@ -542,9 +553,9 @@
             <div class="benchmark-note">
                 <span class="note-icon">📊</span>
                 <div class="note-content">
-                    <strong>Transparency:</strong> Current metrics: <strong>20% precision</strong>, <strong>57.8% recall</strong>, <strong>29.7% F1</strong>.
-                    Best at detecting Prompt Injection, DoS, Excessive Agency, and Overreliance (100% recall).
-                    Actively improving Supply Chain and Insecure Output detection.
+                    <strong>Transparency:</strong> Current metrics: <strong>69.6% precision</strong>, <strong>53.4% recall</strong>, <strong>60.5% F1</strong>.
+                    Outperforms Semgrep (8.2% recall) and Bandit (48.9% F1) on LLM-specific vulnerabilities.
+                    Best at detecting Insecure Plugin (85.7%), Sensitive Info (71.4%), and DoS (66.7%).
                 </div>
             </div>
 
@@ -802,10 +813,10 @@ open report.html
                 </div>
 
                 <div class="faq-item" style="background: var(--bg-secondary); padding: 24px; border-radius: 12px; border: 1px solid var(--border-color);">
-                    <h4 style="margin: 0 0 12px 0; color: var(--text-primary);">Why is precision only 20%?</h4>
+                    <h4 style="margin: 0 0 12px 0; color: var(--text-primary);">How accurate is the detection?</h4>
                     <p style="margin: 0; color: var(--text-secondary); font-size: 14px; line-height: 1.6;">
-                        We optimize for <strong>recall</strong> (catching real vulnerabilities) over precision. Missing a prompt injection is worse than a false positive.
-                        Use <code style="background: var(--bg-primary); padding: 2px 6px; border-radius: 4px;">--mode strict</code> or higher confidence thresholds to reduce false positives.
+                        Current metrics: <strong>69.6% precision</strong>, <strong>53.4% recall</strong>, <strong>60.5% F1 score</strong>.
+                        We outperform Semgrep and Bandit on LLM-specific vulnerabilities. Use <code style="background: var(--bg-primary); padding: 2px 6px; border-radius: 4px;">--mode strict</code> for fewer false positives.
                     </p>
                 </div>
 
@@ -956,12 +967,12 @@ open report.html
                     <div style="text-align: center; padding: 20px;">
                         <div style="width: 48px; height: 48px; border-radius: 50%; background: var(--success); color: white; display: flex; align-items: center; justify-content: center; margin: 0 auto 12px; font-weight: 600;">✓</div>
                         <h4 style="margin: 0 0 8px 0; color: var(--text-primary); font-size: 14px;">Q1 2026</h4>
-                        <p style="margin: 0; color: var(--text-muted); font-size: 13px;">v1.0 CLI Release<br>10 OWASP Detectors<br>61 Security Controls</p>
+                        <p style="margin: 0; color: var(--text-muted); font-size: 13px;">v1.0 CLI Release<br>10 OWASP Detectors<br>60.5% F1 Score</p>
                     </div>
                     <div style="text-align: center; padding: 20px;">
                         <div style="width: 48px; height: 48px; border-radius: 50%; background: var(--accent-primary); color: white; display: flex; align-items: center; justify-content: center; margin: 0 auto 12px; font-weight: 600;">Q2</div>
                         <h4 style="margin: 0 0 8px 0; color: var(--text-primary); font-size: 14px;">Q2 2026</h4>
-                        <p style="margin: 0; color: var(--text-muted); font-size: 13px;">Precision improvements<br>JS/TS support<br>VS Code extension</p>
+                        <p style="margin: 0; color: var(--text-muted); font-size: 13px;">JS/TS support<br>VS Code extension<br>Improved LLM02 detection</p>
                     </div>
                     <div style="text-align: center; padding: 20px;">
                         <div style="width: 48px; height: 48px; border-radius: 50%; background: var(--bg-tertiary); color: var(--text-secondary); display: flex; align-items: center; justify-content: center; margin: 0 auto 12px; font-weight: 600;">Q3</div>
