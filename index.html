@@ -4,12 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AI Security CLI - Unified AI/LLM Security Scanner</title>
-    <meta name="description" content="Static code analysis + live model testing for OWASP LLM Top 10 vulnerabilities. One CLI tool, complete security coverage.">
+    <meta name="description" content="Static code analysis + security posture audit for OWASP LLM Top 10 vulnerabilities. Find AI security issues before deployment.">
     <meta name="keywords" content="AI security, LLM security, OWASP LLM Top 10, prompt injection, security scanner, CLI tool">
 
     <!-- Open Graph -->
     <meta property="og:title" content="AI Security CLI - Unified AI/LLM Security Scanner">
-    <meta property="og:description" content="Static code analysis + live model testing for OWASP LLM Top 10 vulnerabilities.">
+    <meta property="og:description" content="Static code analysis + security posture audit for OWASP LLM Top 10 vulnerabilities.">
     <meta property="og:type" content="website">
 
     <!-- Fonts -->
@@ -54,8 +54,8 @@
 
             <h1 class="hero-title">Unified AI/LLM Security Scanner</h1>
             <p class="hero-subtitle">
-                Static code analysis + live model testing for OWASP LLM Top 10 vulnerabilities.
-                One CLI tool, complete security coverage.
+                Static code analysis + security posture audit for OWASP LLM Top 10 vulnerabilities.
+                Find vulnerabilities in your AI code before deployment.
             </p>
 
             <div class="install-box">
@@ -133,9 +133,9 @@
                     <div class="problem-icon">🧩</div>
                     <h3>Fragmented Tooling</h3>
                     <p>
-                        Existing tools either do static analysis OR live testing, never both.
+                        Existing SAST tools don't understand LLM-specific vulnerabilities.
                         You need multiple tools, different configurations, separate reports.
-                        Integration into CI/CD becomes a nightmare.
+                        No single tool covers the OWASP LLM Top 10.
                     </p>
                 </div>
 
@@ -158,7 +158,7 @@
                 <span class="section-label">The Solution</span>
                 <h2 class="section-title">One Tool. Complete Coverage.</h2>
                 <p class="section-subtitle">
-                    AI Security CLI combines static code analysis and live model testing in a single, unified tool.
+                    AI Security CLI combines static code analysis and security posture audit in a single, unified tool.
                 </p>
             </div>
 
@@ -217,10 +217,10 @@
                     <text x="450" y="165" text-anchor="middle" fill="#ea580c" font-family="JetBrains Mono, monospace" font-weight="600" font-size="14">ai-security-cli audit</text>
                     <text x="450" y="185" text-anchor="middle" fill="#6b7280" font-family="Inter, sans-serif" font-size="12">Security Posture</text>
 
-                    <!-- TEST Command Box -->
-                    <rect x="625" y="140" width="250" height="60" rx="10" fill="white" stroke="#fb923c" stroke-width="2" filter="url(#cardShadow)"/>
-                    <text x="750" y="165" text-anchor="middle" fill="#ea580c" font-family="JetBrains Mono, monospace" font-weight="600" font-size="14">ai-security-cli test</text>
-                    <text x="750" y="185" text-anchor="middle" fill="#6b7280" font-family="Inter, sans-serif" font-size="12">Live Testing</text>
+                    <!-- GARAK Command Box (Recommended for Live Testing) -->
+                    <rect x="625" y="140" width="250" height="60" rx="10" fill="white" stroke="#6b7280" stroke-width="2" stroke-dasharray="5,5" filter="url(#cardShadow)"/>
+                    <text x="750" y="165" text-anchor="middle" fill="#6b7280" font-family="JetBrains Mono, monospace" font-weight="600" font-size="14">garak (recommended)</text>
+                    <text x="750" y="185" text-anchor="middle" fill="#9ca3af" font-family="Inter, sans-serif" font-size="12">Live Testing</text>
 
                     <!-- Arrows to detector boxes -->
                     <line x1="150" y1="200" x2="150" y2="230" stroke="#f97316" stroke-width="2" marker-end="url(#arrowOrange)"/>
