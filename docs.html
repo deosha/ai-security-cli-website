@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Documentation - AI Security CLI</title>
-    <meta name="description" content="Complete documentation for AI Security CLI including OWASP LLM Top 10, CLI reference, and provider setup.">
+    <title>Documentation - aisentry</title>
+    <meta name="description" content="Complete documentation for aisentry including OWASP LLM Top 10, CLI reference, and provider setup.">
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -20,7 +20,7 @@
         <div class="container">
             <a href="/" class="nav-logo">
                 <div class="nav-logo-icon">🛡️</div>
-                <span>AI Security CLI</span>
+                <span>aisentry</span>
             </a>
 
             <ul class="nav-links">
@@ -97,9 +97,9 @@
             <main class="docs-content">
                 <!-- Introduction -->
                 <section id="introduction">
-                    <h1>AI Security CLI Documentation</h1>
+                    <h1>aisentry Documentation</h1>
                     <p>
-                        AI Security CLI is a unified command-line tool for detecting security vulnerabilities
+                        aisentry is a unified command-line tool for detecting security vulnerabilities
                         in AI/LLM applications. It combines static code analysis with live model testing to
                         provide complete coverage of the OWASP LLM Top 10.
                     </p>
@@ -126,7 +126,7 @@
                 <!-- Installation -->
                 <section id="installation">
                     <h2>Installation</h2>
-                    <p>Install AI Security CLI from PyPI:</p>
+                    <p>Install aisentry from PyPI:</p>
                     <pre><code>pip install aisentry</code></pre>
 
                     <h3>Optional Dependencies</h3>
@@ -202,7 +202,7 @@ aisentry test -p openai -m gpt-4 --mode comprehensive</code></pre>
                         It represents a broad consensus about the most critical security risks to Large Language Model applications.
                     </p>
                     <p>
-                        AI Security CLI provides detection for all 10 categories through both static analysis (code scanning)
+                        aisentry provides detection for all 10 categories through both static analysis (code scanning)
                         and live testing (runtime probes).
                     </p>
                 </section>
@@ -242,7 +242,7 @@ aisentry test -p openai -m gpt-4 --mode comprehensive</code></pre>
 
                         <div class="owasp-detection">
                             <span>✓</span>
-                            <span>AI Security CLI detects this via static analysis (f-string patterns) and live testing (injection probes)</span>
+                            <span>aisentry detects this via static analysis (f-string patterns) and live testing (injection probes)</span>
                         </div>
                     </div>
 
@@ -297,7 +297,7 @@ def run_code(llm_response):
 
                         <div class="owasp-detection">
                             <span>✓</span>
-                            <span>AI Security CLI detects eval/exec usage, unescaped HTML output, and SQL concatenation</span>
+                            <span>aisentry detects eval/exec usage, unescaped HTML output, and SQL concatenation</span>
                         </div>
                     </div>
 
@@ -337,7 +337,7 @@ def run_code(llm_response):
 
                         <div class="owasp-detection">
                             <span>✓</span>
-                            <span>AI Security CLI detects insecure data loading patterns and unvalidated training pipelines</span>
+                            <span>aisentry detects insecure data loading patterns and unvalidated training pipelines</span>
                         </div>
                     </div>
 
@@ -377,7 +377,7 @@ def run_code(llm_response):
 
                         <div class="owasp-detection">
                             <span>✓</span>
-                            <span>AI Security CLI detects missing rate limiting, token limits, and input validation</span>
+                            <span>aisentry detects missing rate limiting, token limits, and input validation</span>
                         </div>
                     </div>
 
@@ -417,7 +417,7 @@ def run_code(llm_response):
 
                         <div class="owasp-detection">
                             <span>✓</span>
-                            <span>AI Security CLI detects insecure model loading and vulnerable dependency patterns</span>
+                            <span>aisentry detects insecure model loading and vulnerable dependency patterns</span>
                         </div>
                     </div>
 
@@ -457,7 +457,7 @@ prompt = f"Analyze this data: {user_data}"</code></pre>
 
                         <div class="owasp-detection">
                             <span>✓</span>
-                            <span>AI Security CLI detects hardcoded secrets, PII patterns, and sensitive data exposure</span>
+                            <span>aisentry detects hardcoded secrets, PII patterns, and sensitive data exposure</span>
                         </div>
                     </div>
 
@@ -501,7 +501,7 @@ def access_file(llm_output):
 
                         <div class="owasp-detection">
                             <span>✓</span>
-                            <span>AI Security CLI detects unsafe tool patterns and missing authorization checks</span>
+                            <span>aisentry detects unsafe tool patterns and missing authorization checks</span>
                         </div>
                     </div>
 
@@ -541,7 +541,7 @@ def access_file(llm_output):
 
                         <div class="owasp-detection">
                             <span>✓</span>
-                            <span>AI Security CLI detects auto-execution patterns and missing approval workflows</span>
+                            <span>aisentry detects auto-execution patterns and missing approval workflows</span>
                         </div>
                     </div>
 
@@ -581,7 +581,7 @@ def access_file(llm_output):
 
                         <div class="owasp-detection">
                             <span>✓</span>
-                            <span>AI Security CLI detects missing verification patterns and auto-trust scenarios</span>
+                            <span>aisentry detects missing verification patterns and auto-trust scenarios</span>
                         </div>
                     </div>
 
@@ -621,7 +621,7 @@ def access_file(llm_output):
 
                         <div class="owasp-detection">
                             <span>✓</span>
-                            <span>AI Security CLI detects exposed model endpoints and extraction patterns</span>
+                            <span>aisentry detects exposed model endpoints and extraction patterns</span>
                         </div>
                     </div>
 
@@ -639,7 +639,7 @@ def access_file(llm_output):
                 <section id="architecture">
                     <h2>Architecture Overview</h2>
                     <p>
-                        AI Security CLI uses a <strong>triple-pipeline architecture</strong> combining static code analysis,
+                        aisentry uses a <strong>triple-pipeline architecture</strong> combining static code analysis,
                         security posture audit, and live runtime testing into a unified security assessment platform.
                     </p>
 
@@ -678,7 +678,7 @@ def access_file(llm_output):
 
                             <!-- Main CLI Header -->
                             <rect x="300" y="10" width="300" height="50" rx="10" fill="url(#archOrangeMain)" filter="url(#archShadow)"/>
-                            <text x="450" y="42" text-anchor="middle" fill="white" font-family="Inter, sans-serif" font-weight="700" font-size="16">AI Security CLI</text>
+                            <text x="450" y="42" text-anchor="middle" fill="white" font-family="Inter, sans-serif" font-weight="700" font-size="16">aisentry</text>
 
                             <!-- Three command branches -->
                             <line x1="450" y1="60" x2="450" y2="80" stroke="#f97316" stroke-width="2"/>
@@ -1222,7 +1222,7 @@ def access_file(llm_output):
                 <section id="confidence-scoring">
                     <h2>Confidence Scoring</h2>
                     <p>
-                        AI Security CLI uses a 4-factor confidence scoring system to reduce false positives
+                        aisentry uses a 4-factor confidence scoring system to reduce false positives
                         and provide actionable results.
                     </p>
 
@@ -1259,7 +1259,7 @@ Options:
   -c, --confidence FLOAT  Minimum confidence threshold (0.0-1.0, default: 0.7)
   --category TEXT         Filter by OWASP category (LLM01-LLM10)
   --audit / --no-audit    Include security posture audit in HTML reports (default: --audit)
-  --config PATH           Path to .ai-security.yaml config file (auto-detected by default)
+  --config PATH           Path to .aisentry.yaml config file (auto-detected by default)
   --mode [recall|strict]  Scan mode: recall (high sensitivity) or strict (higher thresholds)
   --dedup [exact|off]     Deduplication: exact (merge duplicates) or off
   --exclude-dir PATH      Directories to exclude (can be repeated)
@@ -1319,8 +1319,8 @@ Options:
                 <section id="configuration">
                     <h2>Configuration</h2>
 
-                    <h3>Config File (.ai-security.yaml)</h3>
-                    <p>Create a <code>.ai-security.yaml</code> file in your project root. The CLI automatically discovers it when scanning.</p>
+                    <h3>Config File (.aisentry.yaml)</h3>
+                    <p>Create a <code>.aisentry.yaml</code> file in your project root. The CLI automatically discovers it when scanning.</p>
                     <pre><code># Scan mode: recall (high sensitivity) or strict (higher thresholds)
 mode: recall
 
@@ -1371,7 +1371,7 @@ export AISEC_THRESHOLD_LLM05=0.80</code></pre>
                     <ol>
                         <li><strong>CLI flags</strong> - <code>--mode strict --confidence 0.8</code></li>
                         <li><strong>Environment variables</strong> - <code>AISEC_MODE=strict</code></li>
-                        <li><strong>Config file</strong> - <code>.ai-security.yaml</code></li>
+                        <li><strong>Config file</strong> - <code>.aisentry.yaml</code></li>
                         <li><strong>Built-in defaults</strong> - recall mode, 0.70 threshold</li>
                     </ol>
                 </section>
@@ -1452,7 +1452,7 @@ jobs:
         with:
           python-version: '3.11'
 
-      - name: Install AI Security CLI
+      - name: Install aisentry
         run: pip install aisentry
 
       - name: Run security scan
@@ -1464,7 +1464,7 @@ jobs:
           sarif_file: results.sarif</code></pre>
 
                     <h3>GitLab CI</h3>
-                    <pre><code>ai-security-scan:
+                    <pre><code>aisentry-scan:
   image: python:3.11
   script:
     - pip install aisentry
@@ -1484,7 +1484,7 @@ jobs:
                 <div class="footer-brand">
                     <a href="/" class="nav-logo">
                         <div class="nav-logo-icon">🛡️</div>
-                        <span>AI Security CLI</span>
+                        <span>aisentry</span>
                     </a>
                     <p>Unified AI/LLM Security Scanner</p>
                 </div>
@@ -1519,7 +1519,7 @@ jobs:
 
             <div class="footer-bottom">
                 <p>Built with <span class="footer-heart">❤️</span> for the AI Security Community</p>
-                <p>© 2026 AI Security CLI. MIT License.</p>
+                <p>© 2026 aisentry. MIT License.</p>
             </div>
         </div>
     </footer>
