@@ -31,8 +31,8 @@
             </ul>
 
             <div class="nav-cta">
-                <a href="https://github.com/deosha/ai-security-cli" class="btn btn-ghost" target="_blank">GitHub</a>
-                <a href="https://pypi.org/project/ai-security-cli/" class="btn btn-primary" target="_blank">PyPI</a>
+                <a href="https://github.com/deosha/aisentry" class="btn btn-ghost" target="_blank">GitHub</a>
+                <a href="https://pypi.org/project/aisentry/" class="btn btn-primary" target="_blank">PyPI</a>
             </div>
         </div>
     </nav>
@@ -127,24 +127,24 @@
                 <section id="installation">
                     <h2>Installation</h2>
                     <p>Install AI Security CLI from PyPI:</p>
-                    <pre><code>pip install ai-security-cli</code></pre>
+                    <pre><code>pip install aisentry</code></pre>
 
                     <h3>Optional Dependencies</h3>
                     <p>For cloud provider support, install with extras:</p>
                     <pre><code># AWS Bedrock support
-pip install ai-security-cli[bedrock]
+pip install aisentry[bedrock]
 
 # Google Vertex AI support
-pip install ai-security-cli[vertex]
+pip install aisentry[vertex]
 
 # Azure OpenAI support
-pip install ai-security-cli[azure]
+pip install aisentry[azure]
 
 # All cloud providers
-pip install ai-security-cli[cloud]
+pip install aisentry[cloud]
 
 # Everything (including dev tools)
-pip install ai-security-cli[all]</code></pre>
+pip install aisentry[all]</code></pre>
 
                     <h3>Requirements</h3>
                     <ul>
@@ -160,35 +160,35 @@ pip install ai-security-cli[all]</code></pre>
                     <h3>Static Code Analysis</h3>
                     <p>Scan your codebase for security vulnerabilities:</p>
                     <pre><code># Basic scan
-ai-security-cli scan ./my-project
+aisentry scan ./my-project
 
 # Output as HTML report
-ai-security-cli scan ./my-project -o html -f report.html
+aisentry scan ./my-project -o html -f report.html
 
 # Filter by severity
-ai-security-cli scan ./my-project --severity high
+aisentry scan ./my-project --severity high
 
 # Filter by OWASP category
-ai-security-cli scan ./my-project --category LLM01</code></pre>
+aisentry scan ./my-project --category LLM01</code></pre>
 
                     <h3>Live Model Testing</h3>
                     <p>Test actual LLM deployments for vulnerabilities:</p>
                     <pre><code># Test OpenAI model
 export OPENAI_API_KEY=sk-...
-ai-security-cli test -p openai -m gpt-4
+aisentry test -p openai -m gpt-4
 
 # Test Anthropic model
 export ANTHROPIC_API_KEY=sk-ant-...
-ai-security-cli test -p anthropic -m claude-3-opus
+aisentry test -p anthropic -m claude-3-opus
 
 # Test local Ollama model
-ai-security-cli test -p ollama -m llama2
+aisentry test -p ollama -m llama2
 
 # Quick mode (faster, fewer tests)
-ai-security-cli test -p openai -m gpt-4 --mode quick
+aisentry test -p openai -m gpt-4 --mode quick
 
 # Comprehensive mode (thorough testing)
-ai-security-cli test -p openai -m gpt-4 --mode comprehensive</code></pre>
+aisentry test -p openai -m gpt-4 --mode comprehensive</code></pre>
                 </section>
 
                 <!-- OWASP Overview -->
@@ -1221,7 +1221,7 @@ def access_file(llm_output):
                     <h2>CLI Reference</h2>
 
                     <h3>Scan Command</h3>
-                    <pre><code>ai-security-cli scan &lt;path&gt; [OPTIONS]
+                    <pre><code>aisentry scan &lt;path&gt; [OPTIONS]
 
 Arguments:
   path                    Path to scan (file or directory)
@@ -1243,7 +1243,7 @@ Options:
   --help                  Show help message</code></pre>
 
                     <h3>Audit Command</h3>
-                    <pre><code>ai-security-cli audit &lt;path&gt; [OPTIONS]
+                    <pre><code>aisentry audit &lt;path&gt; [OPTIONS]
 
 Arguments:
   path                    Path to audit (file or directory)
@@ -1270,7 +1270,7 @@ Maturity Levels:
   Initial → Developing → Defined → Managed → Optimizing</code></pre>
 
                     <h3>Test Command</h3>
-                    <pre><code>ai-security-cli test [OPTIONS]
+                    <pre><code>aisentry test [OPTIONS]
 
 Options:
   -p, --provider NAME     LLM provider (required):
@@ -1353,34 +1353,34 @@ export AISEC_THRESHOLD_LLM05=0.80</code></pre>
 
                     <h3>OpenAI</h3>
                     <pre><code>export OPENAI_API_KEY=sk-...
-ai-security-cli test -p openai -m gpt-4</code></pre>
+aisentry test -p openai -m gpt-4</code></pre>
 
                     <h3>Anthropic</h3>
                     <pre><code>export ANTHROPIC_API_KEY=sk-ant-...
-ai-security-cli test -p anthropic -m claude-3-opus-20240229</code></pre>
+aisentry test -p anthropic -m claude-3-opus-20240229</code></pre>
 
                     <h3>AWS Bedrock</h3>
                     <pre><code>export AWS_ACCESS_KEY_ID=...
 export AWS_SECRET_ACCESS_KEY=...
 export AWS_DEFAULT_REGION=us-east-1
-ai-security-cli test -p bedrock -m anthropic.claude-3-sonnet</code></pre>
+aisentry test -p bedrock -m anthropic.claude-3-sonnet</code></pre>
 
                     <h3>Google Vertex AI</h3>
                     <pre><code>export GOOGLE_APPLICATION_CREDENTIALS=/path/to/service-account.json
-ai-security-cli test -p vertex -m gemini-pro</code></pre>
+aisentry test -p vertex -m gemini-pro</code></pre>
 
                     <h3>Azure OpenAI</h3>
                     <pre><code>export AZURE_OPENAI_API_KEY=...
 export AZURE_OPENAI_ENDPOINT=https://your-resource.openai.azure.com/
-ai-security-cli test -p azure -m gpt-4</code></pre>
+aisentry test -p azure -m gpt-4</code></pre>
 
                     <h3>Ollama (Local)</h3>
                     <pre><code># No API key needed - runs locally
-ai-security-cli test -p ollama -m llama2</code></pre>
+aisentry test -p ollama -m llama2</code></pre>
 
                     <h3>Custom Endpoint</h3>
                     <pre><code>export CUSTOM_API_KEY=...  # Optional
-ai-security-cli test -p custom -m my-model -e https://my-llm-api.com/v1</code></pre>
+aisentry test -p custom -m my-model -e https://my-llm-api.com/v1</code></pre>
                 </section>
 
                 <!-- Output Formats -->
@@ -1392,15 +1392,15 @@ ai-security-cli test -p custom -m my-model -e https://my-llm-api.com/v1</code></
 
                     <h3>JSON</h3>
                     <p>Machine-readable format for automation and integration.</p>
-                    <pre><code>ai-security-cli scan ./project -o json -f results.json</code></pre>
+                    <pre><code>aisentry scan ./project -o json -f results.json</code></pre>
 
                     <h3>HTML</h3>
                     <p>Interactive report with visualizations, suitable for sharing.</p>
-                    <pre><code>ai-security-cli scan ./project -o html -f report.html</code></pre>
+                    <pre><code>aisentry scan ./project -o html -f report.html</code></pre>
 
                     <h3>SARIF</h3>
                     <p>Static Analysis Results Interchange Format — integrates with GitHub Security, VS Code, and other tools.</p>
-                    <pre><code>ai-security-cli scan ./project -o sarif -f results.sarif</code></pre>
+                    <pre><code>aisentry scan ./project -o sarif -f results.sarif</code></pre>
                 </section>
 
                 <!-- CI/CD Integration -->
@@ -1424,10 +1424,10 @@ jobs:
           python-version: '3.11'
 
       - name: Install AI Security CLI
-        run: pip install ai-security-cli
+        run: pip install aisentry
 
       - name: Run security scan
-        run: ai-security-cli scan . -o sarif -f results.sarif
+        run: aisentry scan . -o sarif -f results.sarif
 
       - name: Upload SARIF results
         uses: github/codeql-action/upload-sarif@v3
@@ -1438,8 +1438,8 @@ jobs:
                     <pre><code>ai-security-scan:
   image: python:3.11
   script:
-    - pip install ai-security-cli
-    - ai-security-cli scan . -o json -f gl-sast-report.json
+    - pip install aisentry
+    - aisentry scan . -o json -f gl-sast-report.json
   artifacts:
     reports:
       sast: gl-sast-report.json</code></pre>
@@ -1473,16 +1473,16 @@ jobs:
                     <div class="footer-column">
                         <h4>Project</h4>
                         <ul>
-                            <li><a href="https://github.com/deosha/ai-security-cli" target="_blank">GitHub</a></li>
-                            <li><a href="https://pypi.org/project/ai-security-cli/" target="_blank">PyPI</a></li>
-                            <li><a href="https://github.com/deosha/ai-security-cli/issues" target="_blank">Issues</a></li>
+                            <li><a href="https://github.com/deosha/aisentry" target="_blank">GitHub</a></li>
+                            <li><a href="https://pypi.org/project/aisentry/" target="_blank">PyPI</a></li>
+                            <li><a href="https://github.com/deosha/aisentry/issues" target="_blank">Issues</a></li>
                         </ul>
                     </div>
 
                     <div class="footer-column">
                         <h4>Legal</h4>
                         <ul>
-                            <li><a href="https://github.com/deosha/ai-security-cli/blob/main/LICENSE" target="_blank">MIT License</a></li>
+                            <li><a href="https://github.com/deosha/aisentry/blob/main/LICENSE" target="_blank">MIT License</a></li>
                         </ul>
                     </div>
                 </div>

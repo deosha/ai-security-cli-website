@@ -39,8 +39,8 @@
             </ul>
 
             <div class="nav-cta">
-                <a href="https://github.com/deosha/ai-security-cli" class="btn btn-ghost" target="_blank">GitHub</a>
-                <a href="https://pypi.org/project/ai-security-cli/" class="btn btn-primary" target="_blank">PyPI</a>
+                <a href="https://github.com/deosha/aisentry" class="btn btn-ghost" target="_blank">GitHub</a>
+                <a href="https://pypi.org/project/aisentry/" class="btn btn-primary" target="_blank">PyPI</a>
             </div>
         </div>
     </nav>
@@ -61,38 +61,38 @@
 
             <div class="install-box">
                 <code class="install-command">
-                    <span class="prompt">$</span> pip install ai-security-cli
+                    <span class="prompt">$</span> pip install aisentry
                 </code>
                 <button class="copy-btn" onclick="copyInstall()">Copy</button>
             </div>
 
             <!-- CI Badges -->
             <div class="ci-badges" style="display: flex; gap: 8px; justify-content: center; margin-bottom: 24px; flex-wrap: wrap;">
-                <a href="https://pypi.org/project/ai-security-cli/" target="_blank">
-                    <img src="https://img.shields.io/pypi/v/ai-security-cli?color=blue&label=PyPI" alt="PyPI Version">
+                <a href="https://pypi.org/project/aisentry/" target="_blank">
+                    <img src="https://img.shields.io/pypi/v/aisentry?color=blue&label=PyPI" alt="PyPI Version">
                 </a>
-                <a href="https://github.com/deosha/ai-security-cli/actions" target="_blank">
-                    <img src="https://img.shields.io/github/actions/workflow/status/deosha/ai-security-cli/test.yml?label=Build" alt="Build Status">
+                <a href="https://github.com/deosha/aisentry/actions" target="_blank">
+                    <img src="https://img.shields.io/github/actions/workflow/status/deosha/aisentry/test.yml?label=Build" alt="Build Status">
                 </a>
-                <a href="https://github.com/deosha/ai-security-cli" target="_blank">
+                <a href="https://github.com/deosha/aisentry" target="_blank">
                     <img src="https://img.shields.io/badge/coverage-85%25-brightgreen" alt="Coverage">
                 </a>
-                <a href="https://github.com/deosha/ai-security-cli/blob/main/LICENSE" target="_blank">
+                <a href="https://github.com/deosha/aisentry/blob/main/LICENSE" target="_blank">
                     <img src="https://img.shields.io/badge/license-MIT-green" alt="License">
                 </a>
-                <a href="https://pypi.org/project/ai-security-cli/" target="_blank">
-                    <img src="https://img.shields.io/pypi/pyversions/ai-security-cli" alt="Python Versions">
+                <a href="https://pypi.org/project/aisentry/" target="_blank">
+                    <img src="https://img.shields.io/pypi/pyversions/aisentry" alt="Python Versions">
                 </a>
             </div>
 
             <div class="hero-links">
-                <a href="https://github.com/deosha/ai-security-cli" class="hero-link" target="_blank">
+                <a href="https://github.com/deosha/aisentry" class="hero-link" target="_blank">
                     ⭐ Star on GitHub
                 </a>
                 <a href="docs.html" class="hero-link">
                     📖 Read the Docs
                 </a>
-                <a href="https://pypi.org/project/ai-security-cli/" class="hero-link" target="_blank">
+                <a href="https://pypi.org/project/aisentry/" class="hero-link" target="_blank">
                     📦 View on PyPI
                 </a>
             </div>
@@ -198,7 +198,7 @@
 
                     <!-- Main CLI Box -->
                     <rect x="300" y="20" width="300" height="50" rx="10" fill="url(#orangeMainGradient)" filter="url(#shadow)"/>
-                    <text x="450" y="52" text-anchor="middle" fill="white" font-family="Inter, sans-serif" font-weight="700" font-size="16">ai-security-cli</text>
+                    <text x="450" y="52" text-anchor="middle" fill="white" font-family="Inter, sans-serif" font-weight="700" font-size="16">aisentry</text>
 
                     <!-- Connector line from main to split -->
                     <line x1="450" y1="70" x2="450" y2="100" stroke="#f97316" stroke-width="2"/>
@@ -210,12 +210,12 @@
 
                     <!-- SCAN Command Box -->
                     <rect x="25" y="140" width="250" height="60" rx="10" fill="white" stroke="#f97316" stroke-width="2" filter="url(#cardShadow)"/>
-                    <text x="150" y="165" text-anchor="middle" fill="#ea580c" font-family="JetBrains Mono, monospace" font-weight="600" font-size="14">ai-security-cli scan</text>
+                    <text x="150" y="165" text-anchor="middle" fill="#ea580c" font-family="JetBrains Mono, monospace" font-weight="600" font-size="14">aisentry scan</text>
                     <text x="150" y="185" text-anchor="middle" fill="#6b7280" font-family="Inter, sans-serif" font-size="12">Static + Audit Combined</text>
 
                     <!-- AUDIT Command Box (NEW) -->
                     <rect x="325" y="140" width="250" height="60" rx="10" fill="white" stroke="#c2410c" stroke-width="2" filter="url(#cardShadow)"/>
-                    <text x="450" y="165" text-anchor="middle" fill="#ea580c" font-family="JetBrains Mono, monospace" font-weight="600" font-size="14">ai-security-cli audit</text>
+                    <text x="450" y="165" text-anchor="middle" fill="#ea580c" font-family="JetBrains Mono, monospace" font-weight="600" font-size="14">aisentry audit</text>
                     <text x="450" y="185" text-anchor="middle" fill="#6b7280" font-family="Inter, sans-serif" font-size="12">Security Posture</text>
 
                     <!-- GARAK Command Box (Recommended for Live Testing) -->
@@ -655,20 +655,20 @@
                 <div class="code-block" style="background: var(--bg-primary); padding: 16px; border-radius: 8px; overflow-x: auto;">
 <pre style="margin: 0; font-family: 'JetBrains Mono', monospace; font-size: 13px; line-height: 1.6;">
 <span class="comment"># Install</span>
-pip install ai-security-cli
+pip install aisentry
 
 <span class="comment"># Clone a sample LLM project</span>
 git clone https://github.com/langchain-ai/langchain.git
 cd langchain
 
 <span class="comment"># Generate HTML report (interactive, with audit)</span>
-ai-security-cli scan ./libs/langchain -o html -f report.html
+aisentry scan ./libs/langchain -o html -f report.html
 
 <span class="comment"># Generate JSON report (for automation)</span>
-ai-security-cli scan ./libs/langchain -o json -f report.json
+aisentry scan ./libs/langchain -o json -f report.json
 
 <span class="comment"># Generate SARIF report (for GitHub Code Scanning)</span>
-ai-security-cli scan ./libs/langchain -o sarif -f report.sarif
+aisentry scan ./libs/langchain -o sarif -f report.sarif
 
 <span class="comment"># View the HTML report</span>
 open report.html
@@ -687,7 +687,7 @@ open report.html
                             <h4>Install</h4>
                             <p>Install from PyPI with pip</p>
                             <div class="code-block">
-                                <span class="command">pip install</span> ai-security-cli
+                                <span class="command">pip install</span> aisentry
                             </div>
                         </div>
                     </div>
@@ -699,9 +699,9 @@ open report.html
                             <p>Static analysis + security posture audit</p>
                             <div class="code-block">
                                 <span class="comment"># Scan with audit (tabbed HTML report)</span><br>
-                                <span class="command">ai-security-cli scan</span> ./my-project <span class="flag">-o html</span><br><br>
+                                <span class="command">aisentry scan</span> ./my-project <span class="flag">-o html</span><br><br>
                                 <span class="comment"># Standalone security posture audit</span><br>
-                                <span class="command">ai-security-cli audit</span> ./src <span class="flag">-o html</span>
+                                <span class="command">aisentry audit</span> ./src <span class="flag">-o html</span>
                             </div>
                         </div>
                     </div>
@@ -831,7 +831,7 @@ open report.html
                 <div class="faq-item" style="background: var(--bg-secondary); padding: 24px; border-radius: 12px; border: 1px solid var(--border-color);">
                     <h4 style="margin: 0 0 12px 0; color: var(--text-primary);">Does it support languages other than Python?</h4>
                     <p style="margin: 0; color: var(--text-secondary); font-size: 14px; line-height: 1.6;">
-                        Currently Python-only. JavaScript/TypeScript support is planned. The architecture is extensible — see <a href="https://github.com/deosha/ai-security-cli/blob/main/CONTRIBUTING.md" style="color: var(--accent-primary);">CONTRIBUTING.md</a> if you want to help add new parsers.
+                        Currently Python-only. JavaScript/TypeScript support is planned. The architecture is extensible — see <a href="https://github.com/deosha/aisentry/blob/main/CONTRIBUTING.md" style="color: var(--accent-primary);">CONTRIBUTING.md</a> if you want to help add new parsers.
                     </p>
                 </div>
 
@@ -853,7 +853,7 @@ open report.html
                 <div class="faq-item" style="background: var(--bg-secondary); padding: 24px; border-radius: 12px; border: 1px solid var(--border-color);">
                     <h4 style="margin: 0 0 12px 0; color: var(--text-primary);">How can I contribute?</h4>
                     <p style="margin: 0; color: var(--text-secondary); font-size: 14px; line-height: 1.6;">
-                        We welcome contributions! Check out our <a href="https://github.com/deosha/ai-security-cli/blob/main/CONTRIBUTING.md" style="color: var(--accent-primary);">CONTRIBUTING.md</a> for guidelines.
+                        We welcome contributions! Check out our <a href="https://github.com/deosha/aisentry/blob/main/CONTRIBUTING.md" style="color: var(--accent-primary);">CONTRIBUTING.md</a> for guidelines.
                         Good first issues are labeled <code style="background: var(--bg-primary); padding: 2px 6px; border-radius: 4px;">good-first-issue</code> on GitHub.
                     </p>
                 </div>
@@ -902,7 +902,7 @@ open report.html
                             <span style="color: var(--success);">✓</span> MIT licensed
                         </li>
                     </ul>
-                    <a href="https://pypi.org/project/ai-security-cli/" target="_blank" class="btn btn-primary" style="width: 100%; text-align: center;">Install Now</a>
+                    <a href="https://pypi.org/project/aisentry/" target="_blank" class="btn btn-primary" style="width: 100%; text-align: center;">Install Now</a>
                 </div>
 
                 <!-- Pro Tier -->
@@ -1024,17 +1024,17 @@ open report.html
                     <div class="footer-column">
                         <h4>Project</h4>
                         <ul>
-                            <li><a href="https://github.com/deosha/ai-security-cli" target="_blank">GitHub</a></li>
-                            <li><a href="https://pypi.org/project/ai-security-cli/" target="_blank">PyPI</a></li>
-                            <li><a href="https://github.com/deosha/ai-security-cli/issues" target="_blank">Issues</a></li>
-                            <li><a href="https://github.com/deosha/ai-security-cli/blob/main/CONTRIBUTING.md" target="_blank">Contributing</a></li>
+                            <li><a href="https://github.com/deosha/aisentry" target="_blank">GitHub</a></li>
+                            <li><a href="https://pypi.org/project/aisentry/" target="_blank">PyPI</a></li>
+                            <li><a href="https://github.com/deosha/aisentry/issues" target="_blank">Issues</a></li>
+                            <li><a href="https://github.com/deosha/aisentry/blob/main/CONTRIBUTING.md" target="_blank">Contributing</a></li>
                         </ul>
                     </div>
 
                     <div class="footer-column">
                         <h4>Legal</h4>
                         <ul>
-                            <li><a href="https://github.com/deosha/ai-security-cli/blob/main/LICENSE" target="_blank">MIT License</a></li>
+                            <li><a href="https://github.com/deosha/aisentry/blob/main/LICENSE" target="_blank">MIT License</a></li>
                         </ul>
                     </div>
                 </div>
@@ -1049,7 +1049,7 @@ open report.html
 
     <script>
         function copyInstall() {
-            const command = 'pip install ai-security-cli';
+            const command = 'pip install aisentry';
             navigator.clipboard.writeText(command).then(() => {
                 const btn = document.querySelector('.copy-btn');
                 btn.textContent = 'Copied!';

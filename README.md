@@ -1,6 +1,6 @@
 # AI Security CLI Website
 
-Marketing website for [AI Security CLI](https://github.com/deosha/ai-security-cli) - a unified AI/LLM security scanner.
+Marketing website for [AI Security CLI](https://github.com/deosha/aisentry) - a unified AI/LLM security scanner.
 
 ## Pages
 
@@ -13,5 +13,5 @@ Deployed via AWS Amplify. See `amplify.yml` for build configuration.
 
 ## Links
 
-- [AI Security CLI on PyPI](https://pypi.org/project/ai-security-cli/)
-- [AI Security CLI on GitHub](https://github.com/deosha/ai-security-cli)
+- [AI Security CLI on PyPI](https://pypi.org/project/aisentry/)
+- [AI Security CLI on GitHub](https://github.com/deosha/aisentry)
