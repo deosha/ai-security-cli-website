@@ -333,6 +333,10 @@
                     <div class="stat-number">7</div>
                     <div class="stat-label">LLM Providers</div>
                 </div>
+                <div class="stat-card">
+                    <div class="stat-number" id="pypi-downloads">1.7k+</div>
+                    <div class="stat-label">PyPI Downloads</div>
+                </div>
             </div>
         </div>
     </section>
@@ -1283,14 +1287,28 @@ open report.html
         }
     </script>
 
-    <!-- Fetch latest version from PyPI -->
+    <!-- Fetch latest version and downloads from PyPI -->
     <script>
+        // Fetch version
         fetch('https://pypi.org/pypi/aisentry/json')
             .then(r => r.json())
             .then(data => {
-                const version = data.info.version;
                 const el = document.getElementById('pypi-version');
-                if (el) el.textContent = 'v' + version;
+                if (el) el.textContent = 'v' + data.info.version;
+            })
+            .catch(() => {});
+
+        // Fetch downloads from pypistats
+        fetch('https://pypistats.org/api/packages/aisentry/overall')
+            .then(r => r.json())
+            .then(data => {
+                const total = data.data.reduce((sum, item) => sum + item.downloads, 0);
+                const el = document.getElementById('pypi-downloads');
+                if (el) {
+                    if (total >= 1000000) el.textContent = (total / 1000000).toFixed(1) + 'M+';
+                    else if (total >= 1000) el.textContent = (total / 1000).toFixed(1) + 'k+';
+                    else el.textContent = total.toLocaleString();
+                }
             })
             .catch(() => {});
     </script>
